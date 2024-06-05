@@ -2,17 +2,12 @@
     "rewrites": [
         {
             "source": "/(.*)",
-            "destination": "/api/proxy"
+            "destination": "/api/proxy",
+            "headers": {
+                "Access-Control-Allow-Origin": "*",
+                "Access-Control-Allow-Methods": "GET, POST, PUT, DELETE, OPTIONS",
+                "Access-Control-Allow-Headers": "Origin, X-Requested-With, Content-Type, Accept"
+            }
         }
     ]
-}
-{
-  "headers": [
-    {
-      "source": "/api/(.*)",
-      "headers": [
-        { "key": "Access-Control-Allow-Origin", "value": "*" },
-      ]
-    }
-  ]
 }
